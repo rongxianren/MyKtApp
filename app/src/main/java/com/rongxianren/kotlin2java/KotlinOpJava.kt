@@ -6,9 +6,11 @@ class KotlinOpJava {
         for (item in source) {
             list.add(item)
         }
-
-        for (i in 0..source.size - 1) {
-            list[i] = source[i]
-        }
     }
+}
+
+fun main(args: Array<String>) {
+    val javaObj = JavaArrayExample()
+    val array = intArrayOf(0, 1, 2, 3)
+    javaObj.removeIndices(array)  // 将 int[] 传给方法
 }
