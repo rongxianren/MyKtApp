@@ -39,6 +39,17 @@ fun main(args: Array<String>) {
     var c = C()
     var d :C = c.copy()
     println(c==d)
+
+    var array1:Array<Int> = arrayOf(1,2,3,4,5,67)
+    var array2:Array<Any> = arrayOf(7,8,9,10,11,12)
+    var dd:D = D();
+    dd.copy(array1, array2)
+
+    for (i in array2.indices) {
+        var element = array2[i]
+        print("$element - ")
+    }
+
 }
 
 
@@ -58,7 +69,12 @@ open class C {
 
 
 class D : C() {
-
+    fun copy(from: Array<out Any>, to:Array<Any> ){
+        assert(from.size == to.size)
+        for (i in from.indices) {
+            to[i] = from[i]
+        }
+    }
 }
 
 fun C.foo(i: Int) {
