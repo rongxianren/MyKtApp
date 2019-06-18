@@ -1,6 +1,8 @@
 package com.rongxianren.kotlin2java
 
 class KotlinOpJava {
+    @JvmField
+    val id : Int =1
     fun demo(source: List<Int>) {
         val list = ArrayList<Int>()
         for (item in source) {
